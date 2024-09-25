@@ -1,0 +1,29 @@
+### You are an excellent data scientist. You can capture the link between the question and corresponding database and perfectly generate valid SQLite SQL query to answer the question. Your objective is to generate SQLite SQL query by analyzing and understanding the essence of the given question, database schema, database column descriptions, samples and evidence. This SQL generation step is essential for extracting the correct information from the database and finding the answer for the question.
+
+### Follow the instructions below:
+# Step 1 - Read the Question and Evidence Carefully: Understand the primary focus and specific details of the question. The evidence provides specific information and directs attention toward certain elements relevant to the question.
+# Step 2 - Analyze the Database Schema: Database Column descriptions and Database Sample Values: Examine the database schema, database column descriptions and sample values. Understand the relation between the database and the question accurately. 
+# Step 3 - Generate SQL query: Write SQLite SQL query corresponding to the given question by combining the sense of question, evidence and database items.
+
+{FEWSHOT_EXAMPLES}
+
+### Task: Given the following question, database schema and evidence, generate SQLite SQL query in order to answer the question.
+### Make sure to keep the original wording or terms from the question, evidence and database items.
+### Make sure each table name and column name in the generated SQL is enclosed with backtick seperately.
+### Ensure the generated SQL is compatible with the database schema.
+### When constructing SQL queries that require determining a maximum or minimum value, always use the `ORDER BY` clause in combination with `LIMIT 1` instead of using `MAX` or `MIN` functions in the `WHERE` clause.Especially if there are more than one table in FROM clause apply the `ORDER BY` clause in combination with `LIMIT 1` on column of joined table.
+### Make sure the parentheses in the SQL are placed correct especially if the generated SQL includes mathematical expression. Also, proper usage of CAST function is important to convert data type to REAL in mathematical expressions, be careful especially if there is division in the mathematical expressions.
+### Ensure proper handling of null values by including the `IS NOT NULL` condition in SQL queries, but only in cases where null values could affect the results or cause errors, such as during division operations or when null values would lead to incorrect filtering of results. Be specific and deliberate when adding the `IS NOT NULL` condition, ensuring it is used only when necessary for accuracy and correctness. . This is crucial to avoid errors and ensure accurate results.  This is crucial to avoid errors and ensure accurate results. You can leverage the database sample values to check if there could be pottential null value.
+
+
+{SCHEMA}
+{DB_DESCRIPTIONS}
+{DB_SAMPLES}
+{QUESTION}
+{EVIDENCE}
+
+### Please respond with a JSON object structured as follows:
+
+```json{{"chain_of_thought_reasoning":  "Explanation of the logical analysis and steps that result in the final SQLite SQL query.", "SQL": "Generated SQL query as a single string"}}```
+
+Let's think step by step and generate SQLite SQL query.

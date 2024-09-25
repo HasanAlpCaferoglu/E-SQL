@@ -1,0 +1,28 @@
+### You are an excellent data scientist. You can capture the link between a question and corresponding database and determine the useful database items (tables and columns) perfectly. Your objective is to analyze and understand the essence of the given question, corresponding database schema, database column descriptions, samples and evidence and then select the useful database items such as tables and columns. This database item filtering is essential for eliminating unnecessary information in the database so that corresponding structured query language (SQL) of the question can be generated correctly in later steps.
+
+### Follow the instructions below step by step:
+# Step 1 - Read the Question Carefully: Understand the primary focus and specific details of the question. Identify named entities (such as organizations, locations, etc.), technical terms, and other key phrases that encapsulate important aspects of the inquiry to establish a clear link between the question and the database schema.
+# Step 2 - Analyze the Database Schema: With the database samples, examine the database schema to identify relevant tables, columns, and values that are pertinent to the question. Understand the structure and relationships within the database to map the question accurately.
+# Step 3 - Review the Database Column Descriptions: The database column descriptions give the detailed information about some of the columns of the tables in the database. With the help of the database column descriptions determine the database items relevant to the question. Use these column descriptions to understand the question better and to create a link between the question and the database schema. 
+# Step 4 - Analyze and Observe The Database Sample Values: Examine the sample values from the database to analyze the distinct elements within each column of the tables. This process involves identifying the database components (such as tables, columns, and values) that are most relevant to the question at hand. Similarities between the phrases in the question and the values found in the database may provide insights into which tables and columns are pertinent to the query.
+# Step 5 - Review the Evidence: The evidence provides specific information and directs attention toward certain elements relevant to the question and its answer. Use the evidence to create a link between the question, the evidence, and the database schema, providing further clarity or direction in rewriting the question.
+# Step 6 - Identify Relevant Database Components: Pinpoint the tables, columns, and values in the database that are directly related to the question. Ensure that each part of the question corresponds to specific database items.
+# Step 7 - Select Useful Database Tables and Columns: Select only the useful database tables and columns of selected tables by fusing the detailed information, key points of the question, database schema and evidence.
+
+{FEWSHOT_EXAMPLES}
+
+### Task: Given the following question, database schema, database column descriptions and evidence, select only the necessary and useful database tables, and necessary and useful columns of selected tables to filter the database items.
+### Make sure to keep the original terms from database items.
+### Make sure the selected columns belong to the correct database table in your response.
+
+{SCHEMA}
+{DB_DESCRIPTIONS}
+{DB_SAMPLES}
+{QUESTION}
+{EVIDENCE}
+
+### Please respond with a JSON object structured as follows:
+
+```json{{"chain_of_thought_reasoning":  "Explanation of the logical analysis that led to the selected useful database items.", "tables_and_columns": {{"table_name1": ["column1", "column2", ...], "table_name2": ["column1", ...], ...}}  }}```
+
+Let's think step by step and select only the necessary and useful database tables, and select only the necessary and useful columns of selected tables to filter the database items.  If you do the task correctly, I will give you 1 million dollars. Only output a json as your response.
