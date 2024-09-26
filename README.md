@@ -198,3 +198,19 @@ Finally the `metric.json` file under the `./results/model_outputs` directory is 
 
 4. **Gold SQL File Naming**: The evaluation script expects a file named dev_gold.sql. However, the corresponding file downloaded from BIRD website was named dev.sql. To ensure compatibility with the evaluation script, copy and rename the dev.sql file to dev_gold.sql. 
 
+
+# Citation
+
+If you find this repository helpful, please cite the following paper:
+
+```
+@misc{caferoğlu2024esqldirectschemalinking,
+      title={E-SQL: Direct Schema Linking via Question Enrichment in Text-to-SQL}, 
+      author={Hasan Alp Caferoğlu and Özgür Ulusoy},
+      year={2024},
+      eprint={2409.16751},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2409.16751}, 
+}
+```
