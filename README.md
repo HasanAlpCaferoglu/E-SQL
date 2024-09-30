@@ -2,6 +2,8 @@
 
 This is the official repository for the paper **"E-SQL: Direct Schema Linking via Question Enrichment in Text-to-SQL"**.
 
+[![arXiv](https://img.shields.io/badge/arXiv-2307.04725-b31b1b.svg)](https://www.arxiv.org/abs/2409.16751) [![Bibtex](https://img.shields.io/badge/Cite-BibTeX-orange)](#citation)
+
 ## Overview
 
 Translating natural language queries into SQL (Text-to-SQL) is a critical task for enabling natural language interfaces to databases (NLIDB), but challenges such as complex schemas and ambiguous queries often hinder the accuracy of generated SQL. **E-SQL** addresses these challenges through a novel pipeline that directly links relevant database schema items with the natural language query, a method we call **Question Enrichment**.
